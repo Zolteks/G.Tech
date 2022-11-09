@@ -99,3 +99,37 @@ def jeuRecursif(lettre, n=0):
     return jeuRecursif(lettre, n + 1)
 
 # Fin
+
+def concatWithComma(str1, str2):
+    return str(str1) + ", " + str(str2)
+
+# Exo 2
+# faire une fonction qui itere sur tous les index d'un tableau renvoyant une chaine de caractere avec l'ensemble des occurences d'un chiffre eg :
+# tableau = [0,1,1,1,0,1,1,0,1]
+# la fonction renvoie "0, 4, 7"
+# definir la fonction findIndex qui itere sur le tableau, cherchant l'index des differentes occurences de x
+def findIndex(tab, x):
+    # definir i un index de depart
+    i = 0
+    # definir chaineRetour comme une chaine de caractere vide
+    chaineRetour = ""
+    # je defnini un booleen tel que firstTurn est True
+    firstTurn = True
+    # tant que i est different du nombre d'element dans le tableau
+    while i != len(tab):
+        # alors j'attribue a une variable la valeur de tableau à l'index i
+        selected = tab[i]
+        # si selected est egal a x ET que firstTurn est True
+        if selected == x and firstTurn:
+            # alors on assigne a chaineRetour le retour de str(i)
+            chaineRetour = str(i)
+            # changer la valeur de firstTurn a False
+            firstTurn = False
+        # si selected est egal a x
+        if selected == x:
+            # alors j'assigne le retour de concatWithComma tel que : concatWithComma(chaineRetour, i) a chaineRetour
+            chaineRetour = concatWithComma(chaineRetour, i)
+        # j'incremente i de 1
+        i += 1
+    # retourner la chaine retour
+    return chaineRetour
