@@ -133,3 +133,6 @@ def findIndex(tab, x):
         i += 1
     # retourner la chaine retour
     return chaineRetour
+
+    var = input("sdhfhsdf")
+    pfc = ["p","f","c"]
