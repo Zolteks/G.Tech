@@ -1,6 +1,6 @@
 # Debut
 
-# on admet la fonction randint() qui renvoie une valeur comprise entre deux entiers.
+# on admet la fonction randint() qui renvoie une valeur comprise entre deux entiers donné en parametre.
 # on admet la fonction input() qui renvoie la valeur donné par l'utilisateur.
 
 # definir une fonction pfc() qui lance une partie de pierre feuille ciseau.
