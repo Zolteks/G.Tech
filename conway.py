@@ -3,7 +3,7 @@ import os
 
 def willLive(tab, x, y):
     for i in range():
-        
+        break
 
 
 def gameOfLife(size):
