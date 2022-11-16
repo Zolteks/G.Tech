@@ -28,8 +28,8 @@ def impossibleMorpion():
             choix = False
             while not choix:
                 print("C'est à toi de jouer !")
-                choixY = int(input("coordonné x : "))
-                choixX = int(input("coordonné y : "))
+                choixX = int(input("coordonné x : "))
+                choixY = int(input("coordonné y : "))
                 if tab[choixX][choixY] != "_":
                     print("case occupée, fais un autre choix")
                 else:
