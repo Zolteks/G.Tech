@@ -10,6 +10,3 @@ def jeuRecursif(lettre):
     if lettre == input("devine la lettre connard :"):
         return 1
     return jeuRecursif(lettre) + 1
-
-# print(jeuImperatif("m"))
-print(jeuRecursif("m"))
