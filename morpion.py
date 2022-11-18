@@ -19,23 +19,28 @@ def morpion():
 
     # tant que True
     while True:
-        # ecrire le nom du joueur dont c'est le tour en fonction de l'ID du joueur actuel dans curPlayer 
-        print(f"{curPlayer[curPlayerID]}, c'est à toi !")
+        # définir la variable booléenne check à False
+        check = False
+        # tant que check n'est pas égal à True
+        while not check:
+            # écrire le nom du joueur dont c'est le tour en fonction de l'ID du joueur actuel dans curPlayer 
+            print(f"{curPlayer[curPlayerID]}, c'est à toi !")
 
-        # on assigne à la variable choixX le retour de la variable input("coordonné x : ") sous forme d'entier
-        choixX = int(input("coordonné x : "))
-        # on assigne à la variable choixX le retour de la variable input("coordonné y : ") sous forme d'entier
-        choixY = int(input("coordonné y : "))
+            # on assigne à la variable choixX le retour de la variable input("coordonné x : ") sous forme d'entier
+            choixX = int(input("coordonné x : "))
+            # on assigne à la variable choixX le retour de la variable input("coordonné y : ") sous forme d'entier
+            choixY = int(input("coordonné y : "))
 
-        # si tab[choixX][choixY] est different de "_".
-        if tab[choixX][choixY] != "_":
-            # alors on ecrit "case occupée, fais un autre choix".
-            print("case occupée, fais un autre choix")
-        
-        # sinon
-        else:
-            # assigner le symbole du joueur aux coordonnées choixX, choixY dans tab.
-            tab[choixX][choixY] = playerSymbole[curPlayerID]
+            # si tab[choixX][choixY] est different de "_".
+            if tab[choixX][choixY] != "_":
+                # alors on ecrit "case occupée, fais un autre choix".
+                print("case occupée, fais un autre choix")
+            
+            # sinon
+            else:
+                # assigner le symbole du joueur aux coordonnées choixX, choixY dans tab.
+                tab[choixX][choixY] = playerSymbole[curPlayerID]
+                check = True
 
         # pour chaque element de tab
         for i in tab:
