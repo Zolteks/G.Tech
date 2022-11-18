@@ -5,7 +5,13 @@ from random import randint
 # on admet la fonction input() qui renvoie la valeur donné par l'utilisateur.
 
 # definir une fonction pfc() qui lance une partie de pierre feuille ciseau.
-def pfc():
+def pfc(reversed=False):
+    # définir le dictionnaire qui contient les nom des actions en fonction de leur ID
+    moves = {
+        1:"feuille",
+        2:"pierre",
+        3:"ciseaux"
+    }
     # définir scoreJoueur avec la valeur 0.
     scoreJoueur = 0
     # définir scoreIA avec la valeur 0.
@@ -13,31 +19,50 @@ def pfc():
     # tant que scoreJoueur est different de 3 ou scoreIA est different de 3.
     while scoreJoueur != 3 and scoreIA != 3:
         # assigner à la variable choixJoueur la valeur du retour de l'execution de la fonction input("choisissez une action : 1 pour feuille, 2 pour pierre, 3 pour ciseau").
-        choixJoueur = int(input("choisissez une action : 1 pour feuille, 2 pour pierre, 3 pour ciseau : "))
+        choixJoueur = int(input("choisissez une action : 1 pour feuille, 2 pour pierre, 3 pour ciseaux : "))
         if choixJoueur not in [1,2,3]:
             print("lis les regles")
             pass
         # assigner à la variable choixIA la valeur du retour de l'execution de la fonction randint() avec comme parametres 1 et 3.
         choixIA = int(randint(1, 3))
 
+        print(moves[choixJoueur]," vs ",moves[choixIA])
+
         # si choixJoueur est égal choixIA.
         if choixJoueur == choixIA:
             # alors on écrit "égalité"
             print("égalité...")
 
-        # sinon si choixJoueur égal 1 et choixIA égal 2 ou choixJoueur égal 2 et choixIA égal 3
-        elif (choixJoueur == 1 and choixIA == 2) or (choixJoueur == 2 and choixIA == 3) or (choixJoueur == 3 and choixIA == 1):
-            # alors on écrit "victoire"
-            print("victoire!")
-            # alors on incrémente scoreJoueur de 1
-            scoreJoueur += 1
+        # sinon si reversed n'est pas égal à True
+        elif not reversed:
+            # choixJoueur égal 1 et choixIA égal 2 ou choixJoueur égal 2 et choixIA égal 3
+            if (choixJoueur == 1 and choixIA == 2) or (choixJoueur == 2 and choixIA == 3) or (choixJoueur == 3 and choixIA == 1):
+                # alors on écrit "victoire"
+                print("victoire!")
+                # alors on incrémente scoreJoueur de 1
+                scoreJoueur += 1
 
-        # sinon si choixJoueur égal 2 et choixIA égal 1 ou choixJoueur égal 3 et choixIA égal 2
-        elif (choixJoueur == 2 and choixIA == 1) or (choixJoueur == 3 and choixIA == 2) or (choixJoueur == 1 and choixIA == 3):
-            # alors on écrit "défaite"
-            print("défaite! nulos")
-            # alors on incrémente scoreIA de 1
-            scoreIA += 1
+            # sinon si choixJoueur égal 2 et choixIA égal 1 ou choixJoueur égal 3 et choixIA égal 2
+            elif (choixJoueur == 2 and choixIA == 1) or (choixJoueur == 3 and choixIA == 2) or (choixJoueur == 1 and choixIA == 3):
+                # alors on écrit "défaite"
+                print("défaite! nulos")
+                # alors on incrémente scoreIA de 1
+                scoreIA += 1
+        
+        elif reversed:
+            # choixJoueur égal 1 et choixIA égal 2 ou choixJoueur égal 2 et choixIA égal 3
+            if (choixJoueur == 1 and choixIA == 2) or (choixJoueur == 2 and choixIA == 3) or (choixJoueur == 3 and choixIA == 1):
+                # alors on écrit "défaite"
+                print("défaite! nulos")
+                # alors on incrémente scoreIA de 1
+                scoreIA += 1
+
+            # sinon si choixJoueur égal 2 et choixIA égal 1 ou choixJoueur égal 3 et choixIA égal 2
+            elif (choixJoueur == 2 and choixIA == 1) or (choixJoueur == 3 and choixIA == 2) or (choixJoueur == 1 and choixIA == 3):
+                # alors on écrit "victoire"
+                print("victoire!")
+                # alors on incrémente scoreJoueur de 1
+                scoreJoueur += 1
 
         # on écrit "scores : {scoreJoueur} / {scoreIA}"
         print(f"scores : {scoreJoueur} / {scoreIA}")
@@ -54,4 +79,4 @@ def pfc():
 
 # Fin
 
-pfc()
+pfc(True)
