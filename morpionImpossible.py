@@ -30,10 +30,13 @@ def impossibleMorpion():
 
     # tant que True
     while True:
-        # pour i dans tab
+        print("-------------")
         for i in tab:
-            # écrire i
-            print(i)
+            ligne = "|"
+            for j in i:
+                ligne += f" {j} |"
+            print(ligne)
+            print("-------------")
 
         # incrémenter action de 1
         action += 1
@@ -178,9 +181,13 @@ def impossibleMorpion():
         # si une des conditions de victoire du joueur actuel est vraie dans tab
         if (tab[0][0] == cur and tab[0][1] == cur and tab[0][2] == cur) or (tab[1][0] == cur and tab[1][1] == cur and tab[1][2] == cur) or (tab[2][0] == cur and tab[2][1] == cur and tab[2][2] == cur) or (tab[0][0] == cur and tab[1][0] == cur and tab[2][0] == cur) or (tab[0][1] == cur and tab[1][1] == cur and tab[2][1] == cur) or (tab[0][2] == cur and tab[1][2] == cur and tab[2][2] == cur) or (tab[0][0] == cur and tab[1][1] == cur and tab[2][2] == cur) or (tab[0][2] == cur and tab[1][1] == cur and tab[2][0] == cur):
             # pour i dans tab
+            print("-------------")
             for i in tab:
-                # écrire i
-                print(i)
+                ligne = "|"
+                for j in i:
+                    ligne += f" {j} |"
+                print(ligne)
+                print("-------------")
             # écrire quel joueur a gagné
             print(f"{curPlayer[curPlayerID]} a gagné")
             # casser la boucle principale
