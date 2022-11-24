@@ -41,18 +41,27 @@ def morpion():
             if choixX == -1 and choixY == -1 and bullet == 1:
                 # check égal True
                 check = True
+                # définir x1 avec le retour de la fonction randint(0,2) qui renvoie un nombre entre 0 et 2 inclus
                 x1=randint(0,2)
+                # définir y1 avec le retour de la fonction randint(0,2) qui renvoie un nombre entre 0 et 2 inclus
                 y1=randint(0,2)
+                # définir x2 avec la valeur Null
                 x2=None
+                # définir y2 avec la valeur Null
                 y2=None
+                # tant que x1 différent de x2 et y1 différent de y2
                 while x1 != x2 and y1!= y2:
+                    # définir x2 avec le retour de la fonction randint(0,2) qui renvoie un nombre entre 0 et 2 inclus
                     x2=randint(0,2)
+                    # définir y2 avec le retour de la fonction randint(0,2) qui renvoie un nombre entre 0 et 2 inclus
                     y2=randint(0,2)
-                print(x1, y1)
-                print(x2, y2)
+                # modifier tab[x1][y1] par playerSymbole[curPlayerID]
                 tab[x1][y1] = playerSymbole[curPlayerID]
+                # modifier tab[x2][y2] par playerSymbole[curPlayerID]
                 tab[x2][y2] = playerSymbole[curPlayerID]
+                # multiplier curPlayerID par -1
                 curPlayerID = curPlayerID * -1
+                # décrémenter bullet de 1
                 bullet -= 1
             # sinon si choixX et choixY sont égal à -1 et que bullet n'est pas égal à 1
             elif choixX == -1 and choixY == -1 and bullet != 1:
